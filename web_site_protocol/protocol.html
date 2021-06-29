@@ -3,38 +3,31 @@
 
 <html>
 	<head>
-		<title>My First Website</title>
+		<title>id/class example</title>
 		<meta charset="utf-8">
 		<style>
-			h1 {
+			.big-blue-text {
 				font-size: 64px;
+				color: blue;
+			}
+
+			.centered-text {
 				text-align: center;
-				}
+			}
 
-			h3 {
-				margin-top: 100px;
-				}
-
-			p i {
-				font-size: 48px;
-				}
+			#best-text {
+				color: orange;
+			}
 		</style>
 	</head>
 	<body>
-		<h1>My First Page</h1>
-		<h2>I <i>love</i> HTML!</h2>
-		<h3>안녕 세상!</h3>
+		<h1 class="centered-text">Heading 1</h1>
+		<h2 class="big-blue-text centered-text">Heading 2</h2>
 
-		<img src="images/chiwon.jpg" width="300">
-
-		<p> Lorem ipsum <b>dolor</b> sit amer, consectetur adipiscing
-		elit, sed do eiusmod <i>tempor</i> incididunt ut labore et dolore
-		magna aliqua. </p>
-
-		<a href="https://google.com" target="_blank">구글로 가는 링크</a>
-
-		<a href="folder1/page1.html">page 1</a>
-		<a href="folder1/folder2/page2.html">page 2</a>
+		<p id="best-text">첫 번째 문단</p>
+		<p>두 번째 문단</p>
+		<p class="big-blue-text">세 번째 문단</p>
+		<p>네 번째 문단</p>
 	</body>
 </html>
 
