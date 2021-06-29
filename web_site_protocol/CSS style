@@ -1,0 +1,99 @@
+CSS style 방법
+
+<style>
+원하는 태그 {
+	
+}
+
+태그 태그 {
+ 태그 안의 특정 태그만 설정한다.	
+} 
+</style>
+
+사이트에 CSS 스타일을 입혀주기 위해서 <style> 태그를 사용할 수 있습니다.
+
+<!-- 여기에 html 코드 -->
+
+<style>
+/* 여기에 CSS 코드 */
+</style>
+아주 기본적인 CSS 속성 몇 가지만 봅시다. 그냥 간단하게 사용할 수 있는 정도로만 보고, 이후 섹션에서 각 속성을 더 자세히 살펴보겠습니다.
+
+폰트 크기
+CSS에서 폰트 크기를 표현할 수 있는 단위 몇 가지가 있는데, 그 중 픽셀(px)이 가장 많이 사용됩니다.
+
+HTMLCSS
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+
+<style>
+h2 {
+  font-size: 72px;
+}
+</style>
+결과 숨기기
+
+텍스트 정렬
+글은 왼쪽, 가운데, 또는 오른쪽으로 정렬할 수 있습니다.
+
+HTMLCSS
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+
+<style>
+h1 {
+  text-align: left;
+}
+
+h2 {
+  text-align: right;
+}
+
+h3 {
+  text-align: center;
+}
+</style>
+결과 숨기기
+
+텍스트 색
+글에 색을 입히고 싶으면 color 속성을 사용하면 됩니다. CSS에서 색을 표현하는 방식 몇 가지가 있는데, 나중에 살펴보도록 합시다.
+
+HTMLCSS
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+
+<style>
+h1 {
+  color: lime;
+}
+
+h2 {
+  color: hotpink;
+}
+
+h3 {
+  color: blue;
+}
+</style>
+결과 숨기기
+
+여백
+margin 속성을 사용하면 요소 사이의 여백을 설정할 수 있습니다. 여백의 크기도 픽셀(px) 단위로 설정해주시면 됩니다.
+
+HTMLCSS
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+
+<style>
+h1 {
+  margin-bottom: 80px;
+}
+
+h3 {
+  margin-left: 50px;
+}
+</style>
+결과 숨기기
