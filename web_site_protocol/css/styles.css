@@ -1,0 +1,12 @@
+	.big-blue-text {
+		font-size: 64px;
+		color: blue;
+	}
+
+	.centered-text {
+		text-align: center;
+	}
+
+	#best-text {
+		color: orange;
+	}

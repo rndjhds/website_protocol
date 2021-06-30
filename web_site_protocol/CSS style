@@ -104,3 +104,6 @@ h3 {
         margin-right: auto;
       }
 </style> 이미지 가운데 정렬 코드
+
+css 파일 따로 쓰기
+<link href="외부 스타일 파일 경로" rel="stlyesheet">
