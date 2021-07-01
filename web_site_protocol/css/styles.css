@@ -1,11 +1,15 @@
-	h1 {
-		text-align: center;
+	body {
+		font-size: 16px;
 	}
 
-	p {
-		text-align: center;
+	.div1 {
+		font-size: 1em;
 	}
 
-	.menu {
-		text-align: center;
+	.div2 {
+		font-size: 2em;
+	}
+
+	.div3 {
+		font-size: 1.5em;
 	}
