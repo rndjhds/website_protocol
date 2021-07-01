@@ -1,12 +1,11 @@
-	.big-blue-text {
-		font-size: 64px;
-		color: blue;
-	}
-
-	.centered-text {
+	h1 {
 		text-align: center;
 	}
 
-	#best-text {
-		color: orange;
+	p {
+		text-align: center;
+	}
+
+	.menu {
+		text-align: center;
 	}
