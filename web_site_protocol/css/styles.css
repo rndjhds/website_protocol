@@ -1,3 +1,8 @@
-	h1 {
-		font-family: "Times New Roman", "Times", "serif";
-	}
+@font-face {
+	src: url("../fonts/BMEuljiro10yearslater.ttf");
+	font-family: "Eulji";
+}
+
+p {
+	font-family: "Eulji";
+}

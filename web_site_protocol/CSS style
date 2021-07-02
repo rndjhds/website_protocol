@@ -107,3 +107,12 @@ h3 {
 
 css 파일 따로 쓰기
 <link href="외부 스타일 파일 경로" rel="stlyesheet">
+
+저장된 폰트를 가져오는 방법 :
+@font-face {
+  src: url("저장된 경로");
+  font-family: "이름설정";
+}
+태그 {
+  font-family: "설정된 이름";
+}
