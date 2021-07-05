@@ -116,3 +116,21 @@ css 파일 따로 쓰기
 태그 {
   font-family: "설정된 이름";
 }
+
+padding(margin): 50px 65px 20px 80px; 위 50px 오른쪽65px 아래 20px 왼쪽 80px
+padding(margin): 50px; 모든 방향으로 50px
+padding(margin): 50px 25px; 위아래 50px 좌우 25px
+
+overflow: hidden(visible,scroll,auto);
+hidden은 넘어간 내용을 안보이게 해주고
+visible은 보이게 scroll은 옆에 스크롤바가 생김(auto도)
+
+but auto와 scroll의 차이는
+scroll은 내용이 칸에 다 들어와도 스크롤이 생기지만 auto는 oveflow가 생겨야지만 나
+
+테두리 없애기
+어떤 요소들(예: <input> 태그)은 기본적으로 테두리가 설정되어 있습니다. 이런 요소들의 테두리를 없애고 싶으면 직접 border 속성을 설정해주면 되는데요. 두 가지 방법이 있습니다:
+
+border: none;
+border: 0;
+

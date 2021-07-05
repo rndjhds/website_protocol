@@ -48,3 +48,7 @@ id를 style할려면 #id이름
 class를 style할려면 .class이름
 
 요소들을 묶어 주고 싶을때는 <div>태그로 묶어준다.
+
+폰트 설정 : font-family를 사
+
+font-face : 저장된 폰트를 가져오는 방법
