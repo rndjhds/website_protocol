@@ -134,3 +134,392 @@ scroll은 내용이 칸에 다 들어와도 스크롤이 생기지만 auto는 ov
 border: none;
 border: 0;
 
+border-radius라는 속성을 사용하면 요소의 모서리를 둥글게 만들 수 있습니다. 더 큰 값을 쓰면 더 둥글게 되는 거죠!
+
+HTMLCSS
+.div1 {
+  border: 1px solid green;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.div2 {
+  border: 1px solid green;
+  border-radius: 30px;
+}
+결과 확인
+개별 설정
+그냥 border-radius 속성을 사용하면 모서리 네 개 모두 똑같이 둥글게 되는데요. 각 모서리를 개별 설정할 수도 있습니다.
+
+HTMLCSS
+h1 {
+  border: 1px solid green;
+  border-top-left-radius: 50px; /* 왼쪽 위 */
+  border-top-right-radius: 5px; /* 오른쪽 위 */
+  border-bottom-right-radius: 0px; /* 오른쪽 아래 */
+  border-bottom-left-radius: 20px; /* 왼쪽 아래 */
+
+  배경색
+background-color 속성을 사용하면 배경색을 설정할 수 있습니다. 폰트 색을 설정할 때처럼 색 이름, RGB 코드, HEX 코드 중 하나를 입력하면 됩니다.
+
+HTMLCSS
+h1 {
+  background-color: #4d9fff;
+}
+결과 확인
+페이지 배경색
+페이지 전체의 배경색을 설정하고 싶으면 body 태그에 background-color 속성을 입혀주면 됩니다. 
+
+ 
+
+그리고 배경색을 투명하게 두고 싶으면 transparent 값으로 설정해주면 되는데, 따로 설정을 해주지 않으면 transparent가 기본값으로 설정됩니다!
+
+
+HTMLCSS
+body {
+  background-color: #4d9fff;
+}
+
+h1 {
+  background-color: white;
+}
+
+h2 {
+  background-color: transparent
+}
+
+
+요소에 그림자를 주기 위해서는 box-shadow 속성을 사용하면 되는데요. 기본값은 none입니다. 그림자가 없다는 뜻이죠.
+
+HTMLCSS
+.div1 {
+  background-color: #eeeeee;
+  width: 400px;
+  height: 300px;
+  box-shadow: none;
+}
+결과 확인
+그림자 추가
+위치 설정
+그림자의 위치만 설정해주면 그림자가 나타납니다. 가로 위치와 세로 위치를 설정해줍시다.
+
+HTMLCSS
+.div1 {
+  background-color: #eeeeee;
+  width: 400px;
+  height: 300px;
+  box-shadow: 40px 10px;
+}
+결과 확인
+그림자 색 설정
+위의 예시를 보시면 그림자가 검정색이죠? 따로 설정해주지 않으면 그림자는 검정색입니다. 만약 다른 색으로 바꾸고 싶으면 box-shadow속성에 추가로 색을 써주면 됩니다.
+
+HTMLCSS
+.div1 {
+  background-color: #eeeeee;
+  width: 400px;
+  height: 300px;
+  box-shadow: 40px 10px #4d9fff;
+}
+결과 확인
+흐림 정도 (blur)
+box-shadow 속성에서 그림자가 얼마나 흐리게 나올지 설정해줄 수 있습니다. 가로, 세로 위치 뒤에 추가해주면 되는데요. 기본값은 0px입니다.
+
+HTMLCSS
+.div1 {
+  background-color: #eeeeee;
+  width: 400px;
+  height: 300px;
+  box-shadow: 40px 10px 10px #4d9fff;
+}
+결과 확인
+그림자 크기 (spread)
+그림자가 얼마나 퍼질지도 설정할 수 있습니다. 흐림 값 이후에 써주면 됩니다.
+
+HTMLCSS
+.div1 {
+  background-color: #eeeeee;
+  width: 400px;
+  height: 300px;
+  box-shadow: 40px 10px 10px 20px #4d9fff;
+}
+
+box-sizing을 정리해 봅시다.
+
+HTMLCSS
+.div1 {
+  border: 10px solid red;
+  width: 300px;
+  height: 200px;
+  margin-bottom: 50px;
+}
+
+.div2 {
+  border: 10px solid red;
+  width: 300px;
+  height: 200px;
+  padding: 40px;
+}
+결과 확인
+.div1과 .div2의 width와 height를 똑같이 설정해줬는데, 결과물을 보면 크기가 서로 다르네요. 그 이유는 width와 height가 테두리(border)와 패딩(padding)을 뺀 내용물(content)의 크기만 나타내기 때문입니다. 
+
+ 
+
+따라서 .div1의 실제 가로 길이는 테두리까지 포함한 320px, 세로 길이는 테두리까지 포함한 220px인 거죠. 반면 .div2의 실제 가로 길이는 테두리와 패딩까지 포함한 400px, 세로 길이는 300px입니다.
+
+ 
+
+실제 가로, 세로 크기가 300px, 200px이기 위해서는 테두리와 패딩을 고려해서 계산을 해줘야 한다는 불편함이 있습니다.
+
+해결책: box-sizing
+다행히 CSS3부터는 box-sizing 속성을 사용하면 이 문제를 해결할 수 있습니다. 따로 설정해주지 않으면 box-sizing의 기본값은 content-box인데, 이걸 border-box로 바꿔봅시다.
+
+HTMLCSS
+.div1 {
+  box-sizing: border-box;
+  border: 10px solid red;
+  width: 300px;
+  height: 200px;
+  margin-bottom: 50px;
+}
+
+.div2 {
+  box-sizing: border-box;
+  border: 10px solid red;
+  width: 300px;
+  height: 200px;
+  padding: 40px;
+}
+결과 확인
+box-sizing 속성을 border-box 값으로 설정해주면 width와 height는 테두리와 패딩과 내용물을 모두 포함한 길이가 됩니다. 따라서 더 이상 귀찮은 계산을 할 필요가 없는 거죠!
+
+더 간편하게!
+box-sizing 속성을 사용하면 너무 편하다 보니, 요즘 많은 개발자들이 모든 요소에 box-sizing: border-box;를 써주는 추세입니다. 이걸 간편하게 한 번에 처리하기 위해서는 모든 요소를 나타내는 *에 속성을 써주면 되겠죠?
+
+HTMLCSS
+* {
+  box-sizing: border-box;
+}
+
+.div1 {
+  border: 10px solid red;
+  width: 300px;
+  height: 200px;
+  margin-bottom: 50px;
+}
+
+.div2 {
+  border: 10px solid red;
+  width: 300px;
+  height: 200px;
+  padding: 40px;
+}
+
+배경 이미지에는 여러가지 설정이 가능합니다.
+아래의 세 가지 속성을 좀 더 자세히 살펴봅시다.
+
+background-repeat
+background-repeat는 이미지를 반복시킬 것인지 아닐 것인지, 그리고 반복시킨다면 어떤 방식으로 반복시킬 것인지 정해주는 속성입니다.
+여기에는 우리가 배운 repeat, no-repeat 외에도 다양한 옵션이 있습니다.
+
+/* 반복하지 않음 */
+background-repeat: no-repeat;
+
+/* 가로 방향으로만 반복 */
+background-repeat: repeat-x;
+
+/* 세로 방향으로만 반복 */
+background-repeat: repeat-y;
+
+/* 가로와 세로 모두 반복 */
+background-repeat: repeat;
+
+/* 반복할 수 있는 만큼 반복한 뒤, 남는 공간은 이미지 간의 여백으로 배분 */
+background-repeat: space;
+
+/* 반복할 수 있는 만큼 반복한 뒤, 남는 공간은 이미지 확대를 통해 배분 */
+background-repeat: round;
+HTMLCSS
+body {
+  background-color: gray;
+}
+
+div {
+  width: 300px;
+  height: 230px;
+  border: 2px solid white;
+  background-image: url("https://i.imgur.com/WxH5bez.png");
+  margin: 30px;
+}
+
+#div1 {
+  /* 반복하지 않음 */
+  background-repeat: no-repeat;
+}
+
+#div2 {
+  /* 가로 방향으로만 반복 */
+  background-repeat: repeat-x;
+}
+
+#div3 {
+  /* 세로 방향으로만 반복 */
+  background-repeat: repeat-y;
+}
+
+#div4 {
+  /* 가로와 세로 모두 반복 */
+  background-repeat: repeat;
+}
+
+#div5 {
+  /* 반복할 수 있는 만큼 반복한 뒤, 남는 공간은 이미지 간의 여백으로 배분 */
+  background-repeat: space;
+}
+
+#div6 {
+  /* 반복할 수 있는 만큼 반복한 뒤, 남는 공간은 이미지 확대를 통해 배분 */
+  background-repeat: round;
+}
+결과 확인
+background-size
+background-size는 배경 이미지의 사이즈를 정해주는 속성입니다.
+
+/* 원래 이미지 사이즈대로 출력 */
+background-size: auto;
+
+/* 화면을 꽉 채우면서, 사진 비율을 유지 */
+background-size: cover;
+
+/* 가로, 세로 중 먼저 채워지는 쪽에 맞추어서 출력 */
+background-size: contain;
+
+/* 픽셀값 지정 (가로: 30px, 세로: 50px로 설정) */
+background-size: 30px 50px;
+
+/* 퍼센트값 지정 (가로: 부모 요소 width의 60%, 세로: 부모 요소 height의 70%로 설정) */
+background-size: 60% 70%;
+HTMLCSS
+body {
+  background-color: gray;
+}
+
+div {
+  width: 300px;
+  height: 230px;
+  border: 2px solid white;
+  background-image: url("https://i.imgur.com/WxH5bez.png");
+  margin: 30px;
+  background-repeat: no-repeat;
+}
+
+#div1 {
+  /* 원래 이미지 사이즈대로 출력 */
+  background-size: auto;
+}
+
+#div2 {
+  /* 화면을 꽉 채우면서, 사진 비율을 유지 */
+  background-size: cover;
+}
+
+#div3 {
+  /* 가로, 세로 중 먼저 채워지는 쪽에 맞추어서 출력 */
+  background-size: contain;
+}
+
+#div4 {
+  /* 픽셀값 지정 (가로: 150px, 세로: 10px로 설정) */
+  background-size: 150px 10px;
+}
+
+#div5 {
+  /* 픽셀값 지정 (가로: 200px, 세로: 200px로 설정) */
+  background-size: 200px 200px;
+}
+
+#div6 {
+  /* 퍼센트값 지정 (가로: 부모 요소 width의 50%, 세로: 부모 요소 height의 50%로 설정) */
+  background-size: 50% 50%;
+
+}
+
+#div7 {
+  /* 퍼센트값 지정 (가로: 부모 요소 width의 30%, 세로: 부모 요소 height의 100%로 설정) */
+  background-size: 30% 100%;
+}
+결과 확인
+background-position
+background-position은 배경 이미지의 위치를 정해주는 속성입니다.
+
+/* 단어로 지정해주기 (가로: left, center, right, 세로: top, center, bottom) */
+/* 아래와 같은 총 9개의 조합이 가능 */
+background-position: left top;
+background-position: left center;
+background-position: left bottom;
+background-position: right top;
+background-position: right center;
+background-position: right bottom;
+background-position: center top;
+background-position: center center;
+background-position: center bottom;
+
+/* 퍼센트로 지정해주기 (가로: 전체 width의 25% 지점, 세로: 전체 height의 75% 지점 ) */
+background-position: 25% 75%;
+
+/* 픽셀로 지정하기 (가로: 가장 왼쪽 가장자리에서부터 오른쪽으로 100px 이동한 지점, 세로: 가장 상단 가장자리에서 아래로 200px 이동한 지점) */
+background-position: 100px 200px;
+HTMLCSS
+body {
+  background-color: gray;
+}
+
+div {
+  width: 300px;
+  height: 230px;
+  border: 2px solid white;
+  background-image: url("https://i.imgur.com/WxH5bez.png");
+  margin: 30px;
+  background-repeat: no-repeat;
+}
+
+#div1 {
+  /* 단어로 지정해주기 (가로: 왼쪽, 세로: 상단) */
+  background-position: left top;
+}
+
+#div2 {
+  /* 단어로 지정해주기 (가로: 왼쪽, 세로: 센터) */
+  background-position: left center;
+}
+
+#div3 {
+  /* 단어로 지정해주기 (가로: 센터, 세로: 상단) */
+  background-position: center top;
+}
+
+#div4 {
+  /* 단어로 지정해주기 (가로: 오른쪽, 세로: 하단) */
+  background-position: right bottom;
+}
+
+#div5 {
+  /* 퍼센트로 지정해주기 (가로: 전체 width의 25% 지점, 세로: 전체 height의 75% 지점 ) */
+  background-position: 25% 75%;
+}
+
+#div6 {
+  /* 퍼센트로 지정해주기 (가로: 전체 width의 50% 지점, 세로: 전체 height의 100% 지점 ) */
+  background-position: 50% 100%;
+
+}
+
+#div7 {
+  /* 픽셀로 지정하기 (가로: 가장 왼쪽 가장자리에서부터 오른쪽으로 10px 이동한 지점, 세로: 가장 상단 가장자리에서 아래로 200px 이동한 지점) */
+  background-position: 10px 200px;
+}
+
+#div8 {
+  /* 픽셀로 지정하기 (가로: 가장 왼쪽 가장자리에서부터 오른쪽으로 150px 이동한 지점, 세로: 가장 상단 가장자리에서 아래로 20px 이동한 지점) */
+  background-position: 150px 20px;
+}
