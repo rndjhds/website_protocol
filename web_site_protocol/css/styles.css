@@ -32,13 +32,14 @@ h2 {
 	margin-right: auto;
 	margin-left: auto;
 	border-radius: 10px;
-	overflow: hidden;
+	overflow: hidden;/*사진의 끝부분이 border-radius가 안될시 hidden을 통해 범위를 벗어난 부분을 삭제 방법2*/
 }
 
 /*.food img {
 	border-top-right-radius: 10px;
 	border-top-left-radius: 10px;
-}*/
+}
+다른 부분이 border-radius를 했지만 사진은 적용이 되지않아서 이렇게 설정을 해줌. 방법1*/
 
 .food .info {
 	padding: 20px;
