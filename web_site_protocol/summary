@@ -52,3 +52,202 @@ class를 style할려면 .class이름
 폰트 설정 : font-family를 사
 
 font-face : 저장된 폰트를 가져오는 방법
+
+CSS에서 스타일링 해줄 요소는 '선택자'로 결정합니다.
+
+우리가 이미 알고 있는 것들부터 시작해서, 또 어떤 선택자들이 있는지 살펴봅시다!
+
+자식 (children)
+<i>Outside</i>
+<div class="div1">
+  <i>Inside 1</i>
+  <p>Blah blah <i>Inside 2</i></p>
+  <i>Inside 3</i>
+</div>
+<style>
+/* 'div1' 클래스를 갖고 있는 요소의 자식 중 모든 <i> 태그 */
+.div1 i {
+  color: orange;
+}
+</style>
+
+직속 자식 (direct children)
+<i>Outside</i>
+<div class="div1">
+  <i>Inside 1</i>
+  <p>Blah blah <i>Inside 2</i></p>
+  <i>Inside 3</i>
+</div>
+
+<style>
+/* 'div1' 클래스를 갖고 있는 요소의 직속 자식 중 모든 <i> 태그 */
+.div1 > i {
+  color: orange;
+}
+</style>
+
+복수 선택
+<p class="one">Outside 1</p>
+<p class="two">Outside 2</p>
+<div>
+  <p class="one">Inside 1</p>
+  <p class="two">Inside 2</p>
+  <p class="three">Inside 3</p>
+  <p class="four">Inside 4</p>
+  <p class="five">Inside 5</p>
+</div>
+
+<style>
+/* 'two' 클래스를 가지고 있는 태그 모두와 'four' 클래스를 가지고 있는 태그 모두 선택 */
+.two, .four {
+  color: orange;
+}
+</style>
+
+여러 조건
+<p class="outside one">Outside 1</p>
+<p class="outside two">Outside 2</p>
+<div>
+  <p class="inside one">Inside 1</p>
+  <p class="inside two">Inside 2</p>
+  <p class="inside three">Inside 3</p>
+  <p class="inside four">Inside 4</p>
+  <p class="inside five">Inside 5</p>
+</div>
+
+<style>
+/* 'outside' 클래스를 갖고 있으면서 'one' 클래스도 갖고 있는 태그 */
+.outside.one {
+  color: blue;
+}
+
+/* 'inside' 클래스를 갖고 있으면서 'two' 클래스도 갖고 있는 태그 */
+.inside.two {
+  color: orange;
+}
+</style>
+
+Pseudo-class (가상 클래스)
+콜론(:)을 사용하면 몇 가지 '가상 클래스'를 선택할 수 있습니다.
+n번째 자식
+<div class="div1">
+  <p>Paragraph 1</p>
+  <p>Paragraph 2</p>
+  <p>Paragraph 3</p>
+  <p>Paragraph 4</p>
+  <p>Paragraph 5</p>
+  <p>Paragraph 6</p>
+</div>
+
+<style>
+/* .div1의 자식인 <p> 태그 중 3번째 */
+.div1 p:nth-child(3) {
+  color: blue;
+}
+
+/* .div1의 자식인 <p> 태그 중 첫 번째 */
+.div1 p:first-child {
+  color: red;
+}
+
+/* .div1의 자식인 <p> 태그 중 마지막 */
+.div1 p:last-child {
+  color: green;
+}
+
+/* .div1의 자식 중 마지막 자식이 아닌 <p> 태그 */
+.div1 p:not(:last-child) {
+  font-size: 150%;
+}
+
+/* .div1의 자식 중 첫 번째 자식이 아닌 <p> 태그 */
+.div1 p:not(:first-child) {
+  text-decoration: line-through;
+}
+</style>
+
+마우스 오버 (hover)
+<h1>Hello World!</h1>
+<style>
+h1 {
+  color: orange;
+}
+
+/* 마우스가 <h1> 태그에 올라갔을 때 */
+h1:hover {
+  color: green;
+}
+</stlye>
+
+
+상속되는 속성들
+하지만 태그와 속성에 따라 상속이 되지 않는 경우도 많이 있습니다. 예를 들어서 부모 태그에 설정한 margin이 모든 자식들에게도 적용되면 총체적 난국이 되겠죠?
+
+웬만하면 상속되는 몇 가지 속성들입니다:
+
+1.color
+2.font-family
+3.font-size
+4.font-weight
+5.line-height
+6.list-style
+7.text-align
+8.visibility
+이외에도 많지만 일단 자주 사용하는 몇 가지만 적어두었습니다.
+
+위에 있는 속성들도 항상 상속되는 건 아닙니다. 대표적인 예로 <a> 태그에는 color 속성이 상속되지 않습니다. <a> 태그가 억지로 상속을 받아오기 위해서는 해당 속성에 inherit 값을 쓰면 됩니다!
+
+<div class="div1">
+  Let's go to <a href="https://google.com" target="_blank">google</a>!
+</div>
+
+<div class="div2">
+  Let's go to <a href="https://google.com" target="_blank">google</a>!
+</div>
+
+<style>
+.div1 {
+  color: green;
+}
+
+.div2 {
+  color: orange;
+}
+
+.div2 a {
+  color: inherit;
+}
+</style>
+
+명시도 (Specificity)
+같은 요소를 가리키지만 선택자가 다르다면, '명시도(specificity)'에 따라 우선 순위가 결정됩니다.
+
+명시도 계산기
+명시도 계산 방법을 알려드리겠습니다.
+
+인라인 스타일이 가장 우선 순위가 높습니다.
+선택자에 id가 많을 수록 우선 순위가 높습니다.
+선택자에 class, attribute, pseudo-class가 많을 수록 우선 순위가 높습니다.
+그 다음은 그냥 요소(또는 가상 요소)가 많은 순서입니다.
+<ul> 태그 안에 <li> 태그 안에 <a id="link">가 있다고 가정해봅시다. <ul>과 <li>는 나중에 배울 '리스트' 태그입니다.
+<명시도 사진>
+첫 번째 경우에는 일반 요소가 세 개, 가상 클래스가 한 개 있어서 '명시도 점수'가 13입니다. 두 번째 경우에는 일반 요소가 두 개, 가상 클래스가 한 개, 그리고 id가 한 개 있어서 112점입니다.
+
+따라서 두 선택자에서 겹치는 스타일이 있는 경우, 두 번째 경우인 ul li:first-child #link 선택자의 스타일이 적용되는 거죠!
+
+<ul>
+  <li><a id="link" href="#">Link 1</a></li>
+  <li><a id="link" href="#">Link 1</a></li>
+  <li><a id="link" href="#">Link 1</a></li>
+  <li><a id="link" href="#">Link 1</a></li>
+</ul>
+
+<style>
+ul li:first-child #link {
+  color: green;
+}
+
+ul li:first-child a {
+  color: orange;
+}
+</style>
