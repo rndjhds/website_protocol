@@ -251,3 +251,41 @@ ul li:first-child a {
   color: orange;
 }
 </style>
+
+display의 종류
+모든 요소는 딱 한 개의 display 값을 갖고 있습니다. 가질 수 있는 display의 종류는
+
+1.inline
+2.block
+3.inline-block
+4.flex
+5.list-item
+6.none
+
+inline display
+inline 요소들은 다른 요소들과 같은 줄에 머무르려고 하는 성향과, 필요한 만큼의 가로 길이만 차지하는 성향이 있습니다.
+
+다음 요소들은 기본 display 값이 inline입니다.
+
+<span>
+<a>
+<b>
+<i>
+<img>
+<button>
+
+block display
+block 요소들은 다른 요소들과 독단적인 줄에 가려고 하는 성향과, 최대한 많은 가로 길이를 차지하는 성향이 있습니다.
+
+다음 요소들은 기본 display 값이 block입니다.
+
+<div>
+<h1>, <h2>, <h3>, <h4>, <h5>, <h6>
+<p>
+<nav>
+<ul>
+<li>
+
+Block 요소에게는 가로 길이와 세로 길이를 직접 설정해줄 수 있지만, inline 요소는 자동으로 설정이 됩니다. Inline 요소에게는 가로, 세로 길이의 개념이 딱히 없는 셈이죠.
+
+만약 inline 요소처럼 다른 요소들과 같은 줄에 머무르면서 block 요소처럼 가로, 세로 길이도 설정해주고 싶으면 어떻게 해야 할까요? 바로 그 둘을 섞어놓은 inline-block을 사용하면 됩니다!
