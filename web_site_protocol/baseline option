@@ -1,0 +1,21 @@
+baseline, vertical-align
+
+vertical-align은 box를 위 아래로 움직이면서 줄을 맞춰주는 개념이다.
+
+vertical-align: top;에서 top은 box의 가장 윗 선을 의미한다.
+
+vertical-align: top;의 속성을 받은 box를 제외하고 나머지 box들 중에서 윗선이 가장 높은box의 윗선에 맞춘다.
+
+vertical-align: middle;의 속성을 받은 box는 부모 요소에 baseline이 맞춰진다.
+
+vertical-align: ;으로 baseline을 맞춰주고 부모의 높이가 설정이되지만 최대한 높이를 설정하기 위해서 높이도 조절해준다.
+
+가로 가운데 정렬
+세로 가운데 정렬을 알아보기 전에, 간단하게 가로 가운데 정렬을 알아봅시다.  
+어떤 요소를 가로로 가운데 정렬하려면 어떻게 해야 할까요? 간단합니다.
+
+inline 요소
+inline 또는 inline-block 요소면 부모 태그에 text-align: center;를 써주면 됩니다.
+
+block 요소
+block 요소면 margin-left: auto;, margin-right: auto;를 써주면 되죠? 

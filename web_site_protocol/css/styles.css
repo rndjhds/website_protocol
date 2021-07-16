@@ -1,12 +1,20 @@
-.google_link {
-	text-align: center;
-	padding: 20px;
-	border-radius: 10px;
-	border: 1px solid #eee;
-	width: 300px;
-	background-color: #fafafa;
-	margin-top: 100px;
-	display: block;
-	text-decoration: none;
-	color: black;
+.container {
+	background-color: orange;
+}
+
+.alex {
+	font-size: 90px;
+	background-color: pink;
+}
+
+.ben {
+	font-size: 30px;
+	background-color: green;
+	vertical-align: middle;
+}
+
+.chris {
+	font-size: 60px;
+	background-color: yellow;
+
 }
