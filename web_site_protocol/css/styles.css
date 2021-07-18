@@ -1,20 +1,29 @@
-.container {
-	background-color: orange;
+body {
+	margin: 0px;
+	width: 620px;
 }
 
-.alex {
-	font-size: 90px;
-	background-color: pink;
+.col {
+	height: 200px;
+	float: left;
 }
 
-.ben {
-	font-size: 30px;
-	background-color: green;
-	vertical-align: middle;
+.col-1 {
+	width: 200px;
 }
 
-.chris {
-	font-size: 60px;
-	background-color: yellow;
+.col-2 {
+	width: 400px;
+}
 
+.col-3 {
+	width: 600px;
+}
+
+.grid {
+	border: 2px solid black;
+}
+
+.clearfix {
+	clear: left;
 }

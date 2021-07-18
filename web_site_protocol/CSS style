@@ -171,9 +171,7 @@ h1 {
 페이지 전체의 배경색을 설정하고 싶으면 body 태그에 background-color 속성을 입혀주면 됩니다. 
 
  
-
 그리고 배경색을 투명하게 두고 싶으면 transparent 값으로 설정해주면 되는데, 따로 설정을 해주지 않으면 transparent가 기본값으로 설정됩니다!
-
 
 HTMLCSS
 body {
